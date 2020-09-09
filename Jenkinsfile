@@ -21,11 +21,12 @@ pipeline {
     stage('build') {
         steps {
             sh 'mvn clean install'
+			//install will copy the war to the .m2 folder.
         }
     }
     stage('deploy') {
         steps {
-		    sh 'cp /var/lib/jenkins/workspace/declarativepipeline/target/*.war /opt/tomcat/webapps/'
+		    sh 'cp /var/lib/jenkins/.m2/repository/com/edureka/devops/edurekadevops/*.war /opt/tomcat/webapps/'
         }
     }
 }
