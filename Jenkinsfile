@@ -26,7 +26,7 @@ pipeline {
     }
     stage('deploy') {
         steps {
-		    sh 'cp /var/lib/jenkins/.m2/repository/com/edureka/devops/edurekadevops/*.war /opt/tomcat/webapps/'
+		    sh 'cp /var/lib/jenkins/.m2/repository/com/edureka/devops/edurekadevops/0.0.1-SNAPSHOT/*.war /opt/tomcat/webapps/'
         }
     }
 }
